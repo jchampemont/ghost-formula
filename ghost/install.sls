@@ -55,6 +55,16 @@ npm install -g ghost-cli:
     - repl: '"host": "{{ ghost.listen_addr }}"'
     - count: 1
 
+{{ ghost.path }}_fix_permissions:
+  file.directory:
+    - name: {{ ghost.path }}
+    - user: ghost
+    - group: ghost
+    - mode: 755
+    - recurse:
+      - user
+      - group
+
 ghost restart:
   cmd.run:
     - cwd: {{ ghost.path }}
