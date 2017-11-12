@@ -36,7 +36,7 @@ npm install -g ghost-cli:
     - cwd: {{ ghost.path }}
     - runas: {{ ghost.install_user }}
     - creates: {{ ghost.path }}/config.production.json
-    - shell: bash
+    - shell: /bin/bash
 {% endif %}
 
 {% for theme in ghost.themes %}
