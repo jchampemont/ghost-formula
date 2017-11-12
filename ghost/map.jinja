@@ -1,0 +1,4 @@
+{% set os_code_name = salt['grains.get']('oscodename', None) %}
+
+{% import_yaml 'ghost/defaults.yaml' as default_settings %}
+{% set ghost = salt['pillar.get']('ghost', default=default_settings.get('ghost'), merge=True) %}

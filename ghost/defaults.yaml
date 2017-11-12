@@ -1,0 +1,13 @@
+ghost:
+  install_user: deploy
+  path: /apps/ghost
+  url: https://blog.example.com
+  port: 2368
+  db: mysql # or sqlite3
+  mysql:
+    host: localhost
+    user: ghost
+    pass: password
+    database: ghost
+  sqlite: /apps/ghost.db
+  themes: {}
