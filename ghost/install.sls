@@ -14,8 +14,9 @@ deb https://deb.nodesource.com/node_6.x {{ os_code_name }} main:
 nodejs:
   pkg.installed
 
-ghost-cli:
-  npm.installed
+npm install -g ghost-cli:
+  cmd.run:
+    - creates: /usr/bin/ghost
 
 {{ ghost.path }}:
   file.directory:
