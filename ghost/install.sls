@@ -33,7 +33,7 @@ ghost install --no-stack --no-prompt --no-setup-nginx  --url {{ ghost.url }} --p
     - runas: {{ ghost.install_user }}
     - creates: {{ ghost.path }}/config.production.json
 
-{% for theme in ghost.themes.iteritems() %}
+{% for theme in ghost.themes %}
 {{ theme.git_repository }}:
   git.latest:
     - target: {{ ghost.path }}/content/themes/{{ theme.name }}
