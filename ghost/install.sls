@@ -26,6 +26,7 @@ npm install -g ghost-cli:
     - user: {{ ghost.install_user }}
     - group: {{ ghost.install_user }}
     - dir_mode: 777
+    - onlyif: "test ! -e {{ ghost.path }}"
 
 {% if ghost.db == 'mysql' %}
 "ghost install --no-stack --no-prompt --no-setup-nginx --url {{ ghost.url }} --port {{ ghost.port }} --db {{ ghost.db }}  --dbhost {{ ghost.mysql.host }} --dbuser {{ ghost.mysql.user }} --dbpass {{ ghost.mysql.pass }}  --dbname {{ ghost.mysql.database }}":
