@@ -24,9 +24,9 @@ ghost-cli:
     - dir_mode: 755
 
 {% if ghost.db == 'mysql' %}
-ghost install --no-stack --no-prompt --no-setup-nginx --url {{ ghost.url }} --port {{ ghost.port }} --db {{ ghost.db }}  --dbhost {{ ghost.mysql.host }} --dbuser {{ ghost.mysql.user }} --dbpass {{ ghost.mysql.pass }}  --dbname {{ ghost.mysql.database }}:
+"ghost install --no-stack --no-prompt --no-setup-nginx --url {{ ghost.url }} --port {{ ghost.port }} --db {{ ghost.db }}  --dbhost {{ ghost.mysql.host }} --dbuser {{ ghost.mysql.user }} --dbpass {{ ghost.mysql.pass }}  --dbname {{ ghost.mysql.database }}":
 {%- else -%}
-ghost install --no-stack --no-prompt --no-setup-nginx  --url {{ ghost.url }} --port {{ ghost.port }} --db {{ ghost.db }}  --dbpath {{ ghost.sqlite }}:
+"ghost install --no-stack --no-prompt --no-setup-nginx  --url {{ ghost.url }} --port {{ ghost.port }} --db {{ ghost.db }}  --dbpath {{ ghost.sqlite }}":
 {% endif -%}
   cmd.run:
     - cwd: {{ ghost.path }}
