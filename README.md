@@ -24,3 +24,5 @@ ghost:
     - name: myblog
       git_repository: https://github.com/jchampemont/myblog-ghost-theme.git
 ```
+
+Ths install user must have sudo permissions without password.
