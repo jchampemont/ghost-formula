@@ -13,6 +13,7 @@ ghost:
   path: /apps/ghost
   url: https://blog.example.com
   port: 2368
+  listen_addr: 0.0.0.0
   db: mysql # or sqlite3
   mysql:
     host: localhost

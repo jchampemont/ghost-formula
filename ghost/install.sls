@@ -14,6 +14,9 @@ deb https://deb.nodesource.com/node_6.x {{ os_code_name }} main:
 nodejs:
   pkg.installed
 
+dbus:
+  pkg.installed
+
 npm install -g ghost-cli:
   cmd.run:
     - creates: /usr/bin/ghost
@@ -45,3 +48,16 @@ npm install -g ghost-cli:
     - target: {{ ghost.path }}/content/themes/{{ theme.name }}
     - user: ghost
 {% endfor %}
+
+{{ ghost.path }}/config.production.json:
+  file.replace:
+    - pattern: '"host": "127.0.0.1"'
+    - repl: '"host": "{{ ghost.listen_addr }}"'
+    - count: 1
+
+ghost restart:
+  cmd.run:
+    - cwd: {{ ghost.path }}
+    - runas: {{ ghost.install_user }}
+    - watch:
+      - file: {{ ghost.path }}/config.production.json
