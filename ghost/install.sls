@@ -1,4 +1,4 @@
-{% from 'seafile/map.jinja' import server with context %}
+{% from 'ghost/map.jinja' import server with context %}
 
 wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -:
   cmd.run:
