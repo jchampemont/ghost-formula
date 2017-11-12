@@ -38,3 +38,4 @@ ghost install --no-stack --no-prompt --no-setup-nginx  --url {{ ghost.url }} --p
   git.latest:
     - target: {{ ghost.path }}/content/themes/{{ theme.name }}
     - user: {{ ghost.install_user }}
+{% endfor %}
