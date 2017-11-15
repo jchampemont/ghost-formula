@@ -70,5 +70,5 @@ ghost restart:
   cmd.run:
     - cwd: {{ ghost.path }}
     - runas: {{ ghost.install_user }}
-    - watch:
+    - onchanges:
       - file: {{ ghost.path }}/config.production.json
