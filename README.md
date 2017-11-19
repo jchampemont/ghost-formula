@@ -1,6 +1,8 @@
 # ghost-formula
 Formula for the Ghost blog platform (https://ghost.org/).
 
+See the full [Salt Formulas installation and usage instructions](http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html).
+
 ## Available states
 ### `ghost.install`
 Installs the ghost blog platform.
