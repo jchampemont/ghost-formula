@@ -4,7 +4,7 @@ wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -:
   cmd.run:
     - unless: "apt-key list | grep gpg@nodesource.com"
 
-deb https://deb.nodesource.com/node_6.x {{ os_code_name }} main:
+deb https://deb.nodesource.com/node_10.x {{ os_code_name }} main:
   pkgrepo.managed:
     - humanname: node
     - dist: {{ os_code_name }}
